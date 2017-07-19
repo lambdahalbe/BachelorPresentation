@@ -56,11 +56,47 @@ und Einteilchen-Hamiltonian:
 \begin{align*}
 \mathcal{H} &= \frac{\vec{p}^2}{2m} + V_\text{eff}(\vec{r}, n(\vec{r}))
 \end{align*}
+\item Unbekannte Terme in $V_\text{eff}(\vec{r}, n(\vec{r}))$: exchange-correlation-Term\\
+Verwendete Approximation: PBE (GGA)
+\item Lösen mit Iteration und Test auf Selbstkonsistenz
 \end{itemize}
-
 \end{frame}
 
 
-\subsection{Constrained Density Functional Theory}
-\begin{frame}{}
+\subsection{Dichtefunktionaltheorie mit Zwangsbedingungen}
+\begin{frame}{Dichtefunktionaltheorie mit Zwangsbedingungen (cDFT)}
+\hspace*{-1cm}
+\begin{minipage}{0.8\textwidth}
+	\vspace*{-1.5cm}
+	\begin{itemize}
+		\item Manuelles Verschieben von Ladung mittels externen Potentialen
+		\item Definiere $i$ Regionen und Ladungen $N_i$
+		\item Überlagerte Gauß-Kurven $w(\vec{r})$ zentriert an Kernpositionen $\vec{R}_j$
+	\end{itemize}
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+	\vspace*{-.8cm}
+\begin{tikzpicture}[scale = 0.5]
+	\foreach \i/\j/\color in {0/0.2/red, 0/1.7/red, 2.8/-0.2/blue, 2.8/-1.7/blue}{
+		\foreach \r in {0, 0.01, ..., 1}{
+			\fill[opacity = \r * 0.017, fill = \color] (\i, \j) circle ({2.5 * (1 - \r)});}}
+	\foreach \i/\j/\num in {0/0.2/1, 0/1.7/2, 2.8/-0.2/3, 2.8/-1.7/4}{
+		\node[fill = black, shape = circle, text = white, inner sep = 0.05cm] at (\i, \j)	 {\num};}
+\end{tikzpicture}
+\end{minipage}
+\hspace*{-1cm}
+\begin{minipage}{\textwidth}
+\vspace*{-1cm}
+\begin{itemize}
+	\item Test
+	\begin{align*}
+	F\left[n\left(\vec{r}\right), U_i\right] &= E_0\left[n\left(\vec{r}\right)\right] + 
+	\sum_i U_i\left(\int\dd\vec{r}\ w_i\left(\vec{r}\right)\ n\left(\vec{r}\right) - N_i\right)
+	\end{align*}
+	\item Test
+	\begin{align*}
+	0 &= \int\dd\vec{r}\ w_i\left(\vec{r}\right)\ n\left(\vec{r}\right) - N_i
+	\end{align*}
+\end{itemize}
+\end{minipage}
 \end{frame}
