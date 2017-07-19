@@ -1,12 +1,19 @@
 \documentclass[11pt]{beamer}
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
 \usetheme{Copenhagen}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{mathtools, amssymb, exscale, mathrsfs}
+\usepackage{nicefrac}
+\usepackage{units}
+\usepackage{esvect}
+\usepackage{graphicx}
 \usepackage{paralist}
+\usepackage{tikz}
+\usepackage{lmodern}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc, arrows, decorations.markings, math, arrows.meta}
+\usepackage{isomath}
 
 
 \author{Fabian Glatzel}
@@ -15,7 +22,7 @@
 %\logo{}
 \institute{Physikalisches Institut}
 \date{\today}
-%\subject{}
+%\subject{Physik}
 \setbeamercovered{transparent}
 \setbeamertemplate{navigation symbols}{}
 
@@ -28,21 +35,14 @@
 \tableofcontents
 \end{frame}
 
-\section{Einleitung}
-\begin{frame}
-\frametitle{Motivation}
-\begin{itemize}
-\item Große Anwendungsbreite von organischen Halbleitern
-\item Polyacetylen als einfaches Testsystem
-\item 1950-er \textsc{Longuet-Higgins}
-\end{itemize}
-\end{frame}
+\include{Abschnitte/Einfuerung}
+
+
+
+
+
 
 \section{Ergebnisse}
-\begin{frame}
-	\frametitle{}
-\end{frame}
-
 \section{Zusammenfassung}
 \begin{frame}
 	\frametitle{title}
