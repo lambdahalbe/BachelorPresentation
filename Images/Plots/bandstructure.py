@@ -37,3 +37,18 @@ plt.grid()
 plt.tight_layout()
 plt.savefig("bandstructure_without_gap.pdf")
 plt.show()
+
+plt.plot(k, E(k, delta = 0), label = "LUMO")
+plt.plot(k, -E(k, delta = 0), label = "HOMO")
+
+plt.legend(loc = "best", prop = {'size' : 25})
+plt.xticks([-np.pi/2, 0, np.pi/2], \
+           [r"$\frac{-\pi}{a}$", 0, r"$\frac{\pi}{a}$"], size = 25)
+plt.yticks([-5, 0, 5], \
+           [r"$E_0-2t$",r"$E_0$",r"$E_0+2t$",], size = 25)
+plt.xlabel(r"$k$", size = 25)
+plt.ylabel(r"$E_k$", size = 25)
+plt.grid()
+plt.tight_layout()
+plt.savefig("bandstructure_symmetric.pdf")
+plt.show()
