@@ -2,66 +2,39 @@
 \subsection{Motivation}
 \begin{frame}
 \frametitle{Motivation}
+\vspace*{1cm}
+
 \begin{itemize}
 \item Große Anwendungsbreite von organischen Halbleitern
 \item Polyacetylen als einfaches Testsystem
 \item 1950-er \textsc{Longuet-Higgins}: Alternierende Bindungslängen
 \item 1980-er \textsc{Su, Schrieffer, Heeger}: Anregungen (Soliton)
-\item Gute Bandstruktur mit Tight-Binding
 \end{itemize}
-
-\centering
-\begin{tikzpicture}[scale = .7]
-		\foreach \i in {0,2,4}{
-			\draw (\i, 0) -- +(1,1);
-			\draw (\i, 0.1) -- +(1,1);
-			\draw (\i + 1, 1.05) -- +(1, -1);
-			\draw (\i, 0) -- +(0,-.7) node[circle, fill = white, below] {H};
-			\draw (\i + 1, 1) -- +(0,.7) node[circle, fill = white, above] {H};
-			\node[circle, fill = white] (d\i) at (\i, 0) {C};
-			\node[circle, fill = white] (u\i) at (\i + 1, 1) {C};
-			}
-		\draw (6, 0) -- +(0,-.7) node[circle, fill = white, below] {H};
-		\node[circle, fill = white] (end) at (6,0) {C};
-		\draw [dotted, line width = 1] (end) -- +(.65,.65);
-		\draw [dotted, line width = 1] (d0) -- +(-.65,.65);
-\end{tikzpicture}
+\vspace*{-.5cm}
+\begin{center}
+\hspace*{-4cm}\includegraphics[width = 14cm, angle = -20]{Images/polyacetylene/wavefunctions/HOMO_Side_View}
+\end{center}
 \end{frame}
 
 \subsection{Dichtefunktionaltheorie}
 \begin{frame}
 \frametitle{Dichtefunktionaltheorie}
 \begin{itemize}
+\setlength{\itemsep}{.5cm}
 \item Numerische, ab initio, Selbstkonsistenz-Methode zur Berechnung von quantenmechanischen Grundzuständen
-\item \textsc{Born-Oppenheimer}-Näherung
-\item \textsc{Hohenberg-Kohn} Theoreme:\\
-Elektronendichte des Grundzustands bestimmt externes Potential eindeutig und damit Grundzustands-Wellenfunktion:
+\item \textsc{Hohenberg-Kohn}-Theorem: $\Psi \Rightarrow \rho$
+\item \textsc{Kohn-Sham}-Orbitale $\varphi_i$ mit selber Elektronendichte
 \begin{align*}
-\Psi_0 &= \Psi\left[n_0\right]
-\end{align*}
-Die Grundzustandsdichte minimiert das Energie-Funktional:
-\begin{align*}
-E[n_0] &\le E[n]
-\end{align*}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\begin{itemize}
-\item Nicht wechselwirkende Elektron-Wellenfunktionen $\varphi_i$  (\textsc{Kohn-Sham}-Orbitale) mit selber Elektronendichte
-\begin{align*}
-n(\vec{r}) &= \sum_i \left|\varphi_i\right|^2
+\rho(\vec{r}) &= \sum_i \left|\varphi_i\right|^2
 \end{align*}
 und Einteilchen-Hamiltonian:
 \begin{align*}
-\mathcal{H} &= \frac{\vec{p}^2}{2m} + V_\text{eff}(\vec{r}, n(\vec{r}))
+\mathcal{H} &= \frac{\vec{p}^2}{2m} + V_\text{eff}(\vec{r}, \rho(\vec{r}))
 \end{align*}
-\item Unbekannte Terme in $V_\text{eff}(\vec{r}, n(\vec{r}))$: exchange-correlation-Term\\
+\item Unbekannte Terme in $V_\text{eff}(\vec{r}, \rho(\vec{r}))$: exchange-correlation-Term\\
 Verwendete Approximation: PBE (GGA)
-\item Lösen mit Iteration und Test auf Selbstkonsistenz
 \end{itemize}
 \end{frame}
-
 
 \subsection{Dichtefunktionaltheorie mit Zwangsbedingungen}
 \begin{frame}{Dichtefunktionaltheorie mit Zwangsbedingungen (cDFT)}
@@ -97,7 +70,6 @@ Verwendete Approximation: PBE (GGA)
 	\begin{align*}
 	0 &= \int\dd\vec{r}\ w_i\left(\vec{r}\right)\ n\left(\vec{r}\right) - N_i
 	\end{align*}
-	\item Verwendete Software: GPAW \& ASE
 \end{itemize}
 \end{minipage}
 \end{frame}
@@ -148,7 +120,7 @@ Verwendete Approximation: PBE (GGA)
 		\setlength\itemsep{1cm}
 		\item Polymer mit 'next-neighbour'-Interaktion
 		\item Hamiltonian in der Basis der $\varphi_i$
-		\item Positiven Hopping-Parametern $t_i$
+		\item Positive Hopping-Parameter $t_i$
 	\end{itemize}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
