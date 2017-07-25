@@ -1,72 +1,35 @@
-
-\subsection{Verschiebung}
+\subsection{Bandstruktur}
 \begin{frame}
-\frametitle{Verschiebung}
+\frametitle{Bandstruktur}
+\begin{minipage}{0.7\textwidth}
 \begin{figure}
 	\centering
-	\includegraphics[width = \textwidth]{Images/polyacetylene/convergence/polyacetylene_displacement}
-	\caption{Verschiebung $u$ in Abhängigkeit von den $k$-Punkten}
-	\label{image_k_point_sampling_assymetry}
+	\includegraphics[width = \textwidth]{Images/polyacetylene/bandstructure/band_fit}\\
+	\includegraphics[width = \textwidth]{Images/polyacetylene/bandstructure/band_manually_displaced}
+	\caption{Bandstruktur \emph{trans}-Polyacetylen}
+	\label{image_band_structure_relaxed_polyacetylene}
 \end{figure}
-\centering
-\begin{tabular}{ll}
-Ohne \textsc{Brillouin}-Zonen-Rand:& $u < \unit[10^{-4}]{\AA}$\\
-Mit \textsc{Brillouin}-Zonen-Rand:&$u = \unit[5\cdot10^{-3}]{\AA}$\\
-Literaturwert:& $u = \unit[0.042]{\AA}$
-\end{tabular}
+\end{minipage}
+\begin{minipage}{.29\textwidth}
+\begin{itemize}
+\setlength\itemsep{.2cm}
+\item Berechnet:\\
+$t_0 = \unit[2.62]{eV}$\\
+Literaturwert:\\
+$t_0 = \unit[2.5]{eV}$
+\item Berechnet:\\
+$E_\text{Gap} = \unit[0.14]{eV}$\\
+$\hspace*{1.15cm}(\unit[1.27]{eV})$\\
+Literaturwert:\\
+$E_\text{Gap} = \unit[1.4]{eV}$
+\item Berechnet:\\
+$\alpha = \unit[3.95]{eV/\AA}$\\
+Literaturwert:\\
+$\alpha = \unit[4.1]{eV/\AA}$
+\end{itemize}
+\end{minipage}
 \end{frame}
 
-\begin{frame}
-\begin{figure}
-	\centering
-	\begin{subfigure}{.85\textwidth}
-	\centering
-	\includegraphics[width = \textwidth]{Images/polyacetylene/convergence/Potential_with_asymmetry}
-	\caption{Mit $k$-Punkt am \textsc{Brillouin}-Zonen-Rand.}
-	\label{image_potential_with_asymmetry}
-	\end{subfigure}
-	\begin{subfigure}{.85\textwidth}
-	\centering
-	\includegraphics[width = \textwidth]{Images/polyacetylene/convergence/Potential_without_asymmetry}
-	\caption{Ohne $k$-Punkt am \textsc{Brillouin}-Zonen-Rand.}
-	\label{image_potential_without_asymmetry}
-	\end{subfigure}
-	\caption{Grundzustandsenergie in Abhängigkeit von der Asymmetrie $\nicefrac{u}{u_0}$.}
-\end{figure}
-\end{frame}
-
-\begin{frame}
-\begin{figure}
-\centering
-\begin{tikzpicture}[show background rectangle, scale = .65]
-	\foreach \x in {0,...,7}{
-		\draw[line width=1pt] (\x,0) .. controls (\x + 1, 2) and (\x - 1 , 2) .. cycle .. controls (\x + 1, -2) and (\x - 1 , -2) .. cycle;
-	}
-	\foreach \x in {0, 4}
-	\foreach \y in {0, 1}
-	\foreach \z in {-1, 1}
-	\node at (\x + \y - \z + 1, \z) {\large +};
-	\foreach \x in {0, 4}{
-		\foreach \y in {0, 1}{
-			\foreach \z in {-1, 1}{
-				\node at (\x + \y - \z + 1, -\z) {\large -};
-	}}}
-	\draw[line width = 0.2] (-0.1, -1.8) -- +(-0.3, 0) -- +(-0.3 ,3.6) -- +(0,3.6);
-	\draw[line width = 0.2] (1.1, -1.8) -- +(0.3, 0) -- +(0.3 ,3.6) -- +(0,3.6);
-	\draw[line width = 0.2] (3.9, -1.8) -- +(-0.3, 0) -- +(-0.3 ,3.6) -- +(0,3.6);
-	\draw[line width = 0.2] (7.1, -1.8) -- +(0.3, 0) -- +(0.3 ,3.6) -- +(0,3.6);
-	\draw[dotted, line width = 1.5] (-0.6,0) -- (-1,0);
-	\draw[dotted, line width = 1.5] (7.6,0) -- (8,0);
-\end{tikzpicture}
-\caption{Schema: p-Orbitale von alternierender $\pi$-Bindung.}
-\end{figure}
-\begin{figure}[]
-	\centering
-	\includegraphics[width = .7\textwidth]{Images/polyacetylene/convergence/displacement_double_cell_poly}
-	\caption{Verschiebung $u$ in Abhängigkeit von den $k$-Punkten für eine Einheitszelle mit vier CH-Gruppen.}
-	\label{image_disp_double_cell_poly}
-\end{figure}
-\end{frame}
 
 \begin{frame}
 \begin{figure}
@@ -92,37 +55,38 @@ Literaturwert:& $u = \unit[0.042]{\AA}$
 \end{figure}
 \end{frame}
 
-\subsection{Bandstruktur}
 \begin{frame}
-\frametitle{Bandstruktur}
-\begin{minipage}{0.7\textwidth}
 \begin{figure}
 	\centering
-	\includegraphics[width = \textwidth]{Images/polyacetylene/bands/band_structure}
-	\caption{Bandstruktur \emph{trans}-Polyacetylen}
-	\label{image_band_structure_relaxed_polyacetylene}
+	\begin{subfigure}{0.25\textwidth}
+	\includegraphics[width = \textwidth]{Images/polyacetylene/wavefunctions/Mid_band_2_Cut}
+	\caption{Bindend}
+	\label{image_homo1}
+	\end{subfigure}\hspace*{2cm}
+	\begin{subfigure}{0.41\textwidth}
+	\centering
+	\includegraphics[width = \textwidth]{Images/polyacetylene/wavefunctions/Mid_band_2_Side_View_Cut}
+	\caption{Antibindend}
+	\label{image_lumo1}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+	\centering
+	\begin{tikzpicture}[show background rectangle, yscale = .6]
+		\foreach \x in {0,...,7}{
+			\draw[line width=1pt] (\x,0) .. controls (\x + 1, 2) and (\x - 1 , 2) .. cycle .. controls (\x + 1, -2) and (\x - 1 , -2) .. cycle;
+		}
+		\foreach \x in {0,...,7}{
+			\foreach \y/\s in {-1/+, 1/-}{
+				\node at (\x, \y) {\large \s};}}
+		\draw[dotted, line width = 1.5] (-0.6,0) -- (-1,0);
+		\draw[dotted, line width = 1.5] (7.6,0) -- (8,0);
+		\end{tikzpicture}
+	\caption{Schema: p-Orbitale am $\Gamma$-Punkt}
+	\label{image_homo1_side_view}
+	\end{subfigure}
+	\caption{Isooberflächen für Zustände am $\Gamma$-Punkt.}
 \end{figure}
-\end{minipage}
-\begin{minipage}{.29\textwidth}
-\begin{itemize}
-\setlength\itemsep{.2cm}
-\item Berechnet:\\
-$t_0 = \unit[2.62]{eV}$\\
-Literaturwert:\\
-$t_0 = \unit[2.5]{eV}$
-\item Berechnet:\\
-$\alpha = \unit[3.95]{eV/\AA}$\\
-Literaturwert:\\
-$\alpha = \unit[4.1]{eV/\AA}$
-\item Berechnet:\\
-$E_\text{Gap} = \unit[0.14]{eV}$\\
-$\hspace*{1.15cm}(\unit[1.27]{eV})$\\
-Literaturwert:\\
-$E_\text{Gap} = \unit[1.4]{eV}$
-\end{itemize}
-\end{minipage}
 \end{frame}
-
 
 \subsection{Dichtefunktionaltheorie mit Zwangsbedingungen}
 \begin{frame}{Dichtefunktionaltheorie mit Zwangsbedingungen (cDFT)}
@@ -162,10 +126,36 @@ $E_\text{Gap} = \unit[1.4]{eV}$
 \end{minipage}
 \end{frame}
 
+\begin{frame}
+\frametitle{Kette von Wasserstoff-Atomen}
+\begin{minipage}{0.6\textwidth}
+Möglichst einfaches Testsystem für cDFT
+\end{minipage}
+\begin{minipage}{0.39\textwidth}
+\centering
+\begin{tikzpicture}
+\node [circle, draw] at (0,0) {H};
+\node [circle, draw] at (2,0) {H};
+\draw (-0.8, 0.7) -- ++(-0.2, 0) -- ++(0, -1.4) -- ++(.2, 0);
+\draw (2.8, 0.7) -- ++(0.2, 0) -- ++(0, -1.4) -- ++(-.2, 0);
+\draw [<->] (0, -.5) -- +(2, 0) node [midway, fill = white] {$\small\unit[1]{\AA}$};
+\end{tikzpicture}
+\end{minipage}
+\begin{figure}[]
+	\centering
+	\includegraphics[width = 9cm]{Images/Hydrogen/bands/hydrogen_band_structure}
+	\caption{Bandstruktur der Wasserstoff-Kette}
+	\label{image_hydrogen_band_structure}
+\end{figure}
+\centering
+$\Rightarrow\quad t_0 = \unit[4.8]{eV}$ 
+\end{frame}
+
 \subsection{Erstes Modell zur Beschreibung der Ladungsverschiebung}
 \begin{frame}
 \frametitle{Erstes Modell zur Beschreibung der Ladungsverschiebung}
 \begin{itemize}
+\setlength{\itemsep}{.5cm}
 \item Hopping-Hamiltonian unverändert
 \item Wellenfunktionen einheitlich variieren:
 \begin{align*}
@@ -217,13 +207,13 @@ E_0(q_\text{tb}) &= -\frac{4Nt_0}{\pi} \sqrt{1-q^2_\text{tb}}\\
 Ursachen:
 \begin{itemize}
 \item Grundzustandsenergie $\neq$ Summe Einteilchen-Energien
-\item Zustände variieren nicht gleichmäßig
+\item $E_k$ variieren nicht gleichmäßig
 \end{itemize}
 \begin{figure}
-	\centering
-	\includegraphics[width = 0.4\textwidth]{Images/Hydrogen/charging/charge_vs_k}
-	\caption{Verschobene Ladung in Abhängigkeit von $k$ (tight-binding-Bild).}
-	\label{image_tight_binding_q_vs_k}
+\centering
+\includegraphics[width = 11cm]{Images/Hydrogen/charging/band_structure_q_1}
+\caption{HOMO- and LUMO-Band für verschiedene Ladungsverschiebungen.}
+\label{image_hydrogen_charged_bands}
 \end{figure}
 \end{frame}
 
@@ -231,6 +221,7 @@ Ursachen:
 \begin{frame}
 \frametitle{Zweites Modell zur Beschreibung der Ladungsverschiebung}
 \begin{itemize}
+\setlength{\itemsep}{.5cm}
 \item Modifiziere Hopping-Hamiltonian:
 \begin{align*}
 \begin{pmatrix*}[c]
@@ -269,6 +260,7 @@ E_k &= \pm \sqrt{V^2 + \left(2t_0\cos(ka)\right)^2}
 \begin{frame}
 \begin{minipage}{0.49\textwidth}
 \begin{itemize}
+\setlength{\itemsep}{.5cm}
 \item $V$ korrespondiert mit cDFT Potential-Stärken $U_i$
 \item Erwartung von Hamiltonian:
 \begin{align*}
@@ -286,4 +278,84 @@ $U = \frac{1}{2}(U_1 - U_2)$
 \label{image_potentials_qs_1}
 \end{figure}	
 \end{minipage}
+\end{frame}
+
+\begin{frame}
+\begin{minipage}{0.49\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width = \textwidth]{Images/Hydrogen/charging/border_energy_q_1}
+\caption{HOMO-Band-Energie am \textsc{Brillouin}-Zonen-Rand}
+\end{figure}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+\setlength{\itemsep}{.5cm}
+\item Erwartete Bandform:
+\begin{align*}
+E_k &= - \sqrt{\left(cU\right)^2 + \left(2t_0\cos(ka)\right)^2}
+\end{align*}
+\item \textsc{Brillouin}-Zonen-Rand:
+\begin{align*}
+E_\text{Edge} &= -\left|cU\right|
+\end{align*}
+\item $c = \unit[12.3]{e}$
+\end{itemize}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[]
+	\centering
+	\includegraphics[width = .8\textwidth]{Images/Hydrogen/charging/3D/figure_1-1}
+\end{figure}
+\begin{itemize}
+\item Fit: $\hspace*{1.6cm} t_0 = \unit[4.6]{eV}$
+\item Referenzwert: $t_0 = \unit[4.8]{eV}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.7\textwidth]{Images/Hydrogen/charging/Homo_energy_charge}
+	\caption{Mittlere HOMO-Band-Energie in Abhängigkeit von $U$.}
+\end{figure}
+\begin{itemize}
+\item Daten: $\hspace*{1.9cm} t_0 = \unit[9.1]{eV}$
+\item Modellierte Daten: $t_0 = \unit[4.6]{eV}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Zweites Modell für \emph{trans}-Polyacetylen}
+\begin{figure}
+\begin{subfigure}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[scale = 0.5]
+	\foreach \i/\j/\color in {0/0.2/red, 0/1.7/red, 2.8/-0.2/blue, 2.8/-1.7/blue}{
+		\foreach \r in {0, 0.01, ..., 1}{
+			\fill[opacity = \r * 0.017, fill = \color] (\i, \j) circle ({2.5 * (1 - \r)});}}
+	\foreach \i/\j/\num in {0/0.2/C, 0/1.7/H, 2.8/-0.2/C, 2.8/-1.7/H}{
+		\node[fill = black, shape = circle, text = white, inner sep = 0.05cm] at (\i, \j)	 {\num};}
+\end{tikzpicture}
+\end{subfigure}
+\begin{subfigure}{0.68\textwidth}
+\centering
+\includegraphics[width = \textwidth]{Images/polyacetylene/charging/3D/figure_1-2}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.7\textwidth]{Images/polyacetylene/charging/Homo_energy_charge}
+	\caption{Mittlere HOMO-Band-Energie in Abhängigkeit von $U$.}
+	\label{image_HOMO_average_polyacetylene}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Zusammenfassung}
 \end{frame}
