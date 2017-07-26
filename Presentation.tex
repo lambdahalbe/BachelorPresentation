@@ -14,9 +14,13 @@
 \usepackage{lmodern}
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{calc, arrows, decorations.markings, math, arrows.meta}
+\usepackage{pgfplots}
 \usepackage{isomath}
 \usepackage{subcaption}
 
+\pgfmathdeclarefunction{gauss}{2}{%
+	\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
 
 \newcommand{\dd}{\!\text{d}}
 \newcommand{\ii}{\text{i}}
@@ -26,7 +30,7 @@
 \subtitle{Bachelor-Vortrag}
 %\logo{}
 %\institute{Physikalisches Institut}
-\date{\today}
+\date{27. Juli 2017}
 %\subject{Physik}
 \setbeamercovered{transparent}
 \setbeamertemplate{navigation symbols}{}
@@ -37,11 +41,12 @@
 \end{frame}
 
 \begin{frame}
+\frametitle{Überblick}
+\setcounter{tocdepth}{1}
 \tableofcontents
 \end{frame}
 
 \include{Abschnitte/Einfuerung}
 \include{Abschnitte/Ergebnisse}
-\section{Zusammenfassung}
 \include{Abschnitte/Anhang}
 \end{document}
