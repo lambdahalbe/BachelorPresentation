@@ -91,26 +91,27 @@ Verwendete Approximation: PBE (GGA)
 \subsection{Bindungslänge}
 \begin{frame}
 \frametitle{Bindungslänge}
-
+\begin{minipage}{0.49\textwidth}
 \begin{figure}[]
 	\centering
-	\vspace*{-.43cm}
-	\begin{subfigure}{0.4\textwidth}
-		\vspace*{1.15cm}
-		\includegraphics[width = \textwidth]{Images/polyacetylene/convergence/polyacetylene_nice_unit_cell}
-		\captionsetup{justification = centering}
-		\caption{Schema: Einheitszelle \emph{trans}-Polyacetylen}
-	\end{subfigure}\hspace*{1cm}
-	\begin{subfigure}{0.45\textwidth}
-		\centering
-		\includegraphics[width = \textwidth]{Images/polyacetylene/convergence/unit_cell_length}
-		\captionsetup{justification = centering}
-		\caption{Grundzustandsenergie in Abhängigkeit von der Einheitszellenlänge}
-		\label{image_poly_cell_len}
-	\end{subfigure}
+	\includegraphics[width = .7\textwidth]{Images/polyacetylene/convergence/polyacetylene_nice_unit_cell}
+	\captionsetup{justification = centering}
+	\caption{Schema: Einheitszelle \emph{trans}-Polyacetylen}
 \end{figure}
-
-Berechnet: $a = \unit[1.23]{\AA}$\hfill Literaturwert: $a = \unit[1.2]{\AA}$
+Berechnet: $a = \unit[1.23]{\AA}$\\
+Literaturwert\footnotemark: $a = \unit[1.2]{\AA}$
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\begin{figure}
+\centering
+\includegraphics[width = .95\textwidth]{Images/polyacetylene/convergence/unit_cell_length}
+\captionsetup{justification = centering}
+\caption{Grundzustandsenergie in Abhängigkeit der Einheitszellenlänge}
+\label{image_poly_cell_len}
+\end{figure}
+\end{minipage}
+\footnotetext{{Alle Literaturwerte von: Su, Schrieffer, Heeger: Solitons in Polyacetylene. \& Kertesz, Choi, Yang: Conjugated Polymers and
+Aromaticity.}}
 \end{frame}
 
 \begin{frame}

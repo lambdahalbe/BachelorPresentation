@@ -66,7 +66,7 @@ $\alpha = \unit[4.1]{eV/\AA}$
 	\begin{subfigure}{0.41\textwidth}
 	\centering
 	\includegraphics[width = \textwidth]{Images/polyacetylene/wavefunctions/Mid_band_2_Side_View_Cut}
-	\caption{Antibindend}
+	\caption{Bindend Seitenansicht}
 	\label{image_lumo1}
 	\end{subfigure}
 	\begin{subfigure}{\textwidth}
@@ -151,6 +151,59 @@ Möglichst einfaches Testsystem für cDFT
 $\Rightarrow\quad t_0 = \unit[4.8]{eV}$ 
 \end{frame}
 
+\begin{frame}
+\frametitle{Korrektur von cDFT mit periodischen Randbedingungen}
+\begin{figure}
+\centering
+\begin{subfigure}{0.45\textwidth}
+\centering
+\includegraphics[width = \textwidth]{Images/Hydrogen/charging/energy_contributions_asymmetric}
+\caption{Verschiedene Energiebeiträge zur Gesamtenergie in Abhängigkeit von der verschobenen Ladung $q$.}
+\label{image_contributions_initial}
+\end{subfigure}\hspace*{1cm}
+\begin{subfigure}{0.45\textwidth}
+\centering
+\begin{tikzpicture}[]
+\begin{scope}
+\clip [draw] (-.5, -1.5) rectangle (4.5, 1.5);
+\foreach \x/\color in {0/red, 2.5/blue}{
+\foreach \r in {0, 0.01, ..., 1}{
+\fill[opacity = \r * 0.03, fill = \color] (\x, 0) circle ({2.5 * (.5 - 0.5 * \r)});}}
+\foreach \x/\num in {0/1, 2.5/2}{
+\node[fill = black, shape = circle, text = white] at (\x, 0)	 {\num};}
+\end{scope}
+\end{tikzpicture}
+\caption{Schema: \textsc{Gauß}-Kurven mit periodischer Randbedingung.}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\centering
+\begin{subfigure}{0.45\textwidth}
+\centering
+\includegraphics[width = \textwidth]{Images/Hydrogen/charging/energy_contributions_symmetric}
+\caption{Verschiedene Energiebeiträge zur Gesamtenergie in Abhängigkeit von der verschobenen Ladung $q$.}
+\label{image_contributions_corrected}
+\end{subfigure}\hspace*{1cm}
+\begin{subfigure}{0.45\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{scope}
+\clip [draw] (-.5, -1.5) rectangle (4.5, 1.5);
+\foreach \x/\color in {0/red, 2.5/blue, 5/red}{
+\foreach \r in {0, 0.01, ..., 1}{
+\fill[opacity = \r * 0.03, fill = \color] (\x, 0) circle ({2.5 * (.5 - 0.5 * \r)});}}
+\foreach \x/\num in {0/1, 2.5/2}{
+\node[fill = black, shape = circle, text = white] at (\x, 0)	 {\num};}
+\end{scope}
+\end{tikzpicture}
+\caption{Schema: Korrigierte \textsc{Gauß}-Kurven mit periodischer Randbedingung.}
+\end{subfigure}
+\end{figure} 
+\end{frame}
+
 \subsection{Erstes Modell zur Beschreibung der Ladungsverschiebung}
 \begin{frame}
 \frametitle{Erstes Modell zur Beschreibung der Ladungsverschiebung}
@@ -159,12 +212,11 @@ $\Rightarrow\quad t_0 = \unit[4.8]{eV}$
 \item Hopping-Hamiltonian unverändert
 \item Wellenfunktionen einheitlich variieren:
 \begin{align*}
-\Psi_k^{(v)}(q_\text{tb}) &= \sqrt{\frac{1}{2}-\frac{q_\text{tb}}{2}}c_k^{\dagger(e)}- \sqrt{\frac{1}{2}+\frac{q_\text{tb}}{2}}\frac{\epsilon_k - i \Delta_k}{|E_k|}c_{k}^{\dagger(o)}
+\Psi_k^{(v)}(q) &= \sqrt{\frac{1}{2}-\frac{q}{2}}c_k^{\dagger(e)}- \sqrt{\frac{1}{2}+\frac{q}{2}}c_{k}^{\dagger(o)}
 \end{align*}
 \item Grundzustandsenergie als Summe der Einteilchen-Energien:
 \begin{align*}
-E_0(q_\text{tb}) &= -\frac{4Nt_0}{\pi} \sqrt{1-q^2_\text{tb}}\\
-&= -\frac{8t_0}{\pi} \sqrt{1 - \left(c\cdot q_\text{cDFT}\right)^2}
+E_0(q) &= -\frac{4Nt_0}{\pi} \sqrt{1-q^2}
 \end{align*}
 \end{itemize}
 \end{frame}
@@ -358,4 +410,30 @@ E_\text{Edge} &= -\left|cU\right|
 
 \begin{frame}
 \frametitle{Zusammenfassung}
+Gute Bandstruktur mit DFT
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{l|c|c}
+		Größe & Berechnet & Lit.\\
+		\hline \hline
+		&&\\[-.3cm]
+		Bindungslänge \hfill$a [\unit{\AA}]$ & $1.23$ & $1.2$\\ \hline&&\\[-.3cm]
+		Verschiebung \hfill$u [\unit{\AA}]$& $0 - 5\cdot10^{-3}$ & $0.042$\\ \hline&&\\[-.3cm]
+		Bandlücke \hfill$E_\text{Gap} [\unit{eV}]$ & $0.137\quad(1.27)$ & $1.4$\\ \hline &&\\[-.3cm]
+		Hopping-Parameter \hfill$t_0 [\unit{eV}]$ & $2.62$ & $2.5$ \\ \hline&&\\[-.3cm]
+		Phonon-Kopplungs-Konstante \hspace*{.5cm}$\alpha [\unitfrac{eV}{\AA}]$& $3.95$ & $4.1$
+	\end{tabular}
+\end{table}
+'Proof of Principle': Hopping-Parameter aus Ladungsverschiebung (cDFT)\\
+\begin{align*}
+t_0 = \unit[2.7]{eV}
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\centering
+\begin{huge}
+Vielen Dank für Ihre Aufmerksamkeit
+\end{huge}
+
 \end{frame}
